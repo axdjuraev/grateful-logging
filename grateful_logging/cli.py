@@ -3,7 +3,7 @@ import argparse
 
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-EXAMPLE_CONFIG_FILE = os.path.join(BASE_DIR, "config-example.json")
+EXAMPLE_CONFIG_FILE = os.path.join(BASE_DIR, "assets/config-example.json")
 
 
 def create_config_file(filename):
