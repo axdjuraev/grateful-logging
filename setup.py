@@ -22,6 +22,6 @@ setup(
     author_email="<axdjuraev@gmail.com>",
     include_package_data=True,
     description=DESCIPTION,
-    packages=["grateful_logging"],
+    packages=[*find_packages(), "grateful_logging/assets"],
     install_requires=REQUIREMENTS,
 )
