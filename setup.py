@@ -20,6 +20,7 @@ setup(
     version=VERSION,
     author="axdjuraev",
     author_email="<axdjuraev@gmail.com>",
+    include_package_data=True,
     description=DESCIPTION,
     packages=find_packages(),
     install_requires=REQUIREMENTS,
