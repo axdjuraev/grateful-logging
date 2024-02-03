@@ -11,7 +11,7 @@
         },
         "json": {
             "()": "grateful_logging.formatter.json.JSONFormatter",
-            "fmt_keys": {
+            "include_keys": {
                 "level": "levelname",
                 "message": "message",
                 "timestamp": "timestamp",
@@ -20,7 +20,10 @@
                 "function": "funcName",
                 "line": "lineno",
                 "thread_name": "threadName"
-            }
+            },
+            "always_keys": [
+                "message",
+            ]
         }
     },
     "handlers": {
