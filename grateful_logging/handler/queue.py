@@ -23,7 +23,6 @@ class QueueHandler(_QueueHandler):
     ) -> None:
         _handlers = []
         handlers_map = dict(getattr(logging, "_handlers"))
-        print(f"{handlers_map=}")
 
         for handler_name in handlers:
             if not (handler := handlers_map.get(handler_name)):
