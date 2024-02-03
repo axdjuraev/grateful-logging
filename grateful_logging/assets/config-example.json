@@ -44,7 +44,7 @@
                 "afile",
                 "astdout"
             ],
-            "respect_handler_level": false
+            "respect_handler_level": true
         }
     },
     "loggers": {
