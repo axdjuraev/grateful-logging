@@ -19,7 +19,9 @@
                 "module": "module",
                 "function": "funcName",
                 "line": "lineno",
-                "thread_name": "threadName"
+                "thread_name": "threadName",
+                "stack_info": "stack_info",
+                "exc_info": "exc_info"
             },
             "always_keys": [
                 "message",
