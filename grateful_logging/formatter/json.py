@@ -11,16 +11,12 @@ class JSONFormatter(logging.Formatter):
     def __init__(
         self, 
         *,
-        include_keys: "dict[TDefaultKey, TAlisKey]",
+        include_keys: "dict[TAlisKey, TDefaultKey]",
         always_keys: "Iterable[str]" = tuple(),
     ):
-        super().__init__()
-
-        if not include_keys.keys():
-            raise ValueError("include_fields cannot be None")
-        
         self._include_fields = include_keys 
         self._always_keys = always_keys
+        super().__init__()
 
     def format(self, record: "logging.LogRecord") -> str:
         message = self._prepare_log_dict(record)
@@ -29,9 +25,9 @@ class JSONFormatter(logging.Formatter):
     def _prepare_log_dict(self, record: "logging.LogRecord"):
         message = {
             alias: value
-            for key, alias in self._include_fields.items()
+            for alias, key in self._include_fields.items()
             if (
-                (value := record.__dict__[key]) 
+                (value := record.__dict__[key]) is not None
                 or (key in self._always_keys)
             )
         }
