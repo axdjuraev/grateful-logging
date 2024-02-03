@@ -42,7 +42,9 @@ class QueueHandler(_QueueHandler):
             self.listener.start()
 
         if auto_register_shutdown:
-            atexit.register(self.listener.stop)
+            atexit.register(self._shutup)
 
         handlers_map = dict(getattr(logging, "_handlers"))
-        print(f"{handlers_map=}")
+
+    def _shutup(self):
+        self.listener.stop()
