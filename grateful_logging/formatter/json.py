@@ -27,7 +27,7 @@ class JSONFormatter(logging.Formatter):
             alias: value
             for alias, key in self._include_fields.items()
             if (
-                (value := record.__dict__[key]) is not None
+                (value := record.__dict__.get(key)) is not None
                 or (key in self._always_keys)
             )
         }
